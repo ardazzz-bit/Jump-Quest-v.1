@@ -1,0 +1,191 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUMP QUEST</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="world">
+
+    <!-- SKY -->
+    <div class="sun"></div>
+    <div class="stars"></div>
+
+    <!-- CLOUDS -->
+    <div class="cloud cloud-one"></div>
+    <div class="cloud cloud-two"></div>
+    <div class="cloud cloud-three"></div>
+    <div class="cloud cloud-four"></div>
+    <div class="cloud cloud-five"></div>
+
+    <!-- DISTANT SCENERY -->
+    <div class="mountains"></div>
+    <div class="hill hill-one"></div>
+    <div class="hill hill-two"></div>
+    <div class="hill hill-three"></div>
+
+    <!-- FLOATING ISLANDS -->
+    <div class="island island-one">
+        <div class="island-grass"></div>
+        <div class="island-waterfall"></div>
+    </div>
+    <div class="island island-two">
+        <div class="island-grass"></div>
+    </div>
+
+    <!-- FLOATING COINS -->
+    <div class="coin coin-one">J</div>
+    <div class="coin coin-two">J</div>
+    <div class="coin coin-three">J</div>
+    <div class="coin coin-four">J</div>
+    <div class="coin coin-five">J</div>
+    <div class="coin coin-six">J</div>
+    <div class="coin coin-seven">J</div>
+
+    <!-- DECORATIONS -->
+    <div class="sparkle sparkle-one">✦</div>
+    <div class="sparkle sparkle-two">✧</div>
+    <div class="sparkle sparkle-three">✦</div>
+    <div class="sparkle sparkle-four">✧</div>
+
+    <!-- HUD -->
+    <div class="top-info">
+
+        <div class="coin-wallet">
+            <span>🪙</span>
+            <span id="menuCoins">0</span>
+        </div>
+
+        <button class="account-small" id="accountButton" onclick="showAccount()">
+            👤 GUEST
+        </button>
+
+    </div>
+
+    <!-- MAIN MENU -->
+    <main class="menu">
+
+        <div class="title-decoration">✦ THE ADVENTURE BEGINS ✦</div>
+
+        <h1>
+            <span class="title-jump">JUMP</span>
+            <span class="title-quest">QUEST</span>
+        </h1>
+
+        <p class="subtitle">JUMP • COLLECT • UPGRADE</p>
+
+        <div class="menu-buttons">
+            <button class="play-button" onclick="startGame()">
+                <span>▶</span> PLAY
+            </button>
+
+            <button class="shop-button" onclick="showShop()">
+                <span>🛒</span> SHOP
+            </button>
+
+            <button class="ability-button" onclick="window.location.href='abilities.html'">
+                <span>⚡</span> ABILITY SHOP
+            </button>
+
+            <button class="credits-button" onclick="showCredits()">
+                <span>★</span> CREDITS
+            </button>
+        </div>
+
+        <p class="footer">© 2026 JUMP QUEST</p>
+
+    </main>
+
+    <!-- FOREGROUND -->
+    <div class="foreground">
+        <div class="tree tree-one"><span></span></div>
+        <div class="tree tree-two"><span></span></div>
+        <div class="mushroom mushroom-one"></div>
+        <div class="mushroom mushroom-two"></div>
+        <div class="question-block">?</div>
+        <div class="ground"></div>
+        <div class="pipe"></div>
+    </div>
+
+    <!-- CHARACTER SHOP -->
+    <section class="popup" id="shopPopup">
+        <div class="popup-panel shop-panel">
+
+            <button class="close-button" onclick="closePopups()">X</button>
+
+            <h2>CHARACTER SHOP</h2>
+            <p class="popup-subtitle">CHOOSE YOUR HERO!</p>
+
+            <div class="shop-wallet">
+                🪙 <span id="shopCoins">0</span> COINS
+            </div>
+
+            <div class="character-grid" id="characterGrid"></div>
+
+            <p class="shop-note">
+                Collect coins during your adventures to unlock outfits!
+            </p>
+
+        </div>
+    </section>
+
+    <!-- PLAYER ACCOUNT -->
+    <section class="popup" id="accountPopup">
+        <div class="popup-panel account-panel">
+
+            <button class="close-button" onclick="closePopups()">X</button>
+
+            <h2>PLAYER ACCOUNT</h2>
+            <p class="popup-subtitle">YOUR ADVENTURE PROFILE</p>
+
+            <div class="account-avatar">👤</div>
+
+            <h3 id="accountStatus">GUEST PLAYER</h3>
+
+            <p id="accountDescription" class="account-description">
+                You're currently playing as a guest.
+            </p>
+
+            <div class="account-reward">
+                <span>👑</span>
+                <div>
+                    <strong>ROYAL CHAMPION</strong>
+                    <small>Exclusive registered-player outfit</small>
+                </div>
+            </div>
+
+            <button class="account-action" id="signInButton" onclick="showLoginInfo()">
+                SIGN IN
+            </button>
+
+            <button class="account-action register-button" id="createAccountButton" onclick="showRegisterInfo()">
+                CREATE ACCOUNT
+            </button>
+
+            <button class="guest-button" id="guestButton" onclick="continueAsGuest()">
+                CONTINUE AS GUEST
+            </button>
+
+            <button class="guest-button" id="signOutButton" onclick="signOutPlayer()" style="display:none;">
+                SIGN OUT
+            </button>
+
+            <p id="accountNote" class="account-note">
+                Register to receive exclusive rewards!
+            </p>
+
+        </div>
+    </section>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/cloud-save.js"></script>
+<script src="js/menu.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUMP QUEST - Player Access</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+
+    <div class="background">
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+        <div class="hill hill-one"></div>
+        <div class="hill hill-two"></div>
+
+        <main class="login-container">
+
+            <div class="logo">
+                <h1>JUMP QUEST</h1>
+                <p>YOUR ADVENTURE AWAITS</p>
+            </div>
+
+            <!-- LOGIN -->
+            <section id="loginSection" class="auth-section">
+                <h2>WELCOME BACK!</h2>
+                <p class="description">LOGIN TO YOUR ACCOUNT</p>
+
+                <form id="loginForm">
+                    <label for="loginEmail">EMAIL</label>
+                    <input
+                        type="email"
+                        id="loginEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label for="loginPassword">PASSWORD</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        required
+                    >
+
+                    <button type="submit" class="main-button">
+                        LOGIN
+                    </button>
+                </form>
+
+                <p class="switch-text">
+                    Don't have an account?
+                    <button type="button" onclick="showRegister()">
+                        REGISTER
+                    </button>
+                </p>
+            </section>
+
+            <!-- REGISTER -->
+            <section id="registerSection" class="auth-section hidden">
+                <h2>JOIN THE ADVENTURE!</h2>
+                <p class="description">CREATE YOUR PLAYER ACCOUNT</p>
+
+                <form id="registerForm">
+                    <label for="registerName">PLAYER NAME</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Choose a player name"
+                        maxlength="16"
+                        required
+                    >
+
+                    <label for="registerEmail">EMAIL</label>
+                    <input
+                        type="email"
+                        id="registerEmail"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                    <label for="registerPassword">PASSWORD</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="At least 8 characters"
+                        minlength="8"
+                        required
+                    >
+
+                    <button type="submit" class="main-button register-button">
+                        CREATE ACCOUNT
+                    </button>
+                </form>
+
+                <p class="switch-text">
+                    Already have an account?
+                    <button type="button" onclick="showLogin()">
+                        LOGIN
+                    </button>
+                </p>
+            </section>
+<!-- EMAIL OTP VERIFICATION -->
+<section id="otpSection" class="auth-section hidden">
+    <h2>VERIFY YOUR EMAIL!</h2>
+    <p class="description">ENTER THE CODE SENT TO YOUR EMAIL</p>
+
+    <form id="otpForm">
+        <label for="otpCode">VERIFICATION CODE</label>
+        <input
+            type="text"
+            id="otpCode"
+            placeholder="Enter 8-digit code"
+            maxlength="8"
+            inputmode="numeric"
+            required
+        >
+
+        <button type="submit" class="main-button">
+            VERIFY ACCOUNT
+        </button>
+    </form>
+
+    <p id="resendTimer">WAIT 60 SECONDS TO RESEND</p>
+
+    <button type="button" id="resendOtpButton" class="guest-button" disabled>
+        RESEND CODE
+    </button>
+</section>
+            <div class="separator">
+                <span></span>
+                OR
+                <span></span>
+            </div>
+
+            <button class="guest-button" onclick="continueAsGuest()">
+                CONTINUE AS GUEST
+            </button>
+
+            <p id="message" class="message"></p>
+
+            <p class="footer">© 2026 JUMP QUEST</p>
+
+        </main>
+
+        <div class="ground"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

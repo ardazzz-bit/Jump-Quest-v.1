@@ -1,0 +1,337 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Press Start 2P', monospace;
+    min-height: 100vh;
+}
+
+.background {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 12px 100px;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        to bottom,
+        #54baff,
+        #8cddff 65%,
+        #c8f3ff
+    );
+}
+
+/* CLOUDS */
+
+.cloud {
+    position: absolute;
+    width: 130px;
+    height: 45px;
+    background: white;
+    border-radius: 30px;
+    opacity: 0.85;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 55px;
+    height: 55px;
+    top: -25px;
+    left: 20px;
+}
+
+.cloud::after {
+    width: 45px;
+    height: 45px;
+    top: -18px;
+    right: 20px;
+}
+
+.cloud-one {
+    top: 13%;
+    left: 10%;
+}
+
+.cloud-two {
+    top: 25%;
+    right: 9%;
+    transform: scale(0.8);
+}
+
+/* HILLS */
+
+.hill {
+    position: absolute;
+    bottom: 85px;
+    width: 240px;
+    height: 150px;
+    border-radius: 50% 50% 0 0;
+    background: linear-gradient(#70dc55, #36b943);
+    border: 5px solid #208b36;
+}
+
+.hill-one {
+    left: -70px;
+}
+
+.hill-two {
+    right: -80px;
+    width: 200px;
+    height: 120px;
+}
+
+/* LOGIN CONTAINER */
+
+.login-container {
+    position: relative;
+    z-index: 5;
+    width: min(480px, 100%);
+    max-height: 88vh;
+    overflow-y: auto;
+
+    padding: 30px 28px;
+
+    background: #fff1b8;
+    border: 6px solid #b96a32;
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 0 #75401f,
+        0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* LOGO */
+
+.logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.logo h1 {
+    color: #e83d35;
+    font-size: clamp(23px, 5vw, 34px);
+    line-height: 1.6;
+
+    text-shadow:
+        3px 3px #ffdb45,
+        5px 5px #a83b24;
+}
+
+.logo p {
+    color: #89502b;
+    font-size: 8px;
+    line-height: 2;
+    margin-top: 8px;
+}
+
+/* SECTIONS */
+
+.auth-section h2 {
+    color: #328bd9;
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.description {
+    color: #89502b;
+    font-size: 8px;
+    text-align: center;
+    margin: 12px 0 24px;
+    line-height: 1.8;
+}
+
+.hidden {
+    display: none;
+}
+
+/* FORM */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    color: #89502b;
+    font-size: 8px;
+    margin-top: 8px;
+}
+
+form input {
+    width: 100%;
+    padding: 15px 12px;
+
+    background: #fffdf0;
+    border: 3px solid #d9a35e;
+    border-radius: 6px;
+
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+
+form input:focus {
+    border-color: #328bd9;
+    box-shadow: 0 0 0 3px rgba(50, 139, 217, 0.15);
+}
+
+form input::placeholder {
+    color: #a99b83;
+}
+
+/* BUTTONS */
+
+.main-button,
+.guest-button {
+    width: 100%;
+    padding: 17px 10px;
+    margin-top: 15px;
+
+    color: white;
+    background: #328bd9;
+    border: 4px solid #fff5d1;
+    border-bottom: 7px solid #18518d;
+    border-radius: 7px;
+
+    font-family: inherit;
+    font-size: 10px;
+    cursor: pointer;
+    transition: 0.15s;
+}
+
+.main-button:hover,
+.guest-button:hover {
+    filter: brightness(1.12);
+    transform: translateY(-3px);
+}
+
+.main-button:active,
+.guest-button:active {
+    transform: translateY(3px);
+}
+
+.register-button {
+    background: #42b94e;
+    border-bottom-color: #217c31;
+}
+
+.guest-button {
+    background: #e9a52e;
+    border-bottom-color: #a66b17;
+}
+
+/* SWITCH LOGIN / REGISTER */
+
+.switch-text {
+    color: #89502b;
+    font-size: 8px;
+    text-align: center;
+    line-height: 2.3;
+    margin-top: 20px;
+}
+
+.switch-text button {
+    display: inline-block;
+    padding: 4px;
+    color: #328bd9;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 8px;
+    cursor: pointer;
+}
+
+/* SEPARATOR */
+
+.separator {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 22px 0 5px;
+
+    color: #a77a4b;
+    font-size: 8px;
+}
+
+.separator span {
+    height: 2px;
+    flex: 1;
+    background: #d9b77f;
+}
+
+/* MESSAGE */
+
+.message {
+    min-height: 20px;
+    color: #b33c32;
+    font-size: 8px;
+    text-align: center;
+    line-height: 2;
+    margin-top: 14px;
+}
+
+.footer {
+    color: #9b693f;
+    font-size: 7px;
+    text-align: center;
+    margin-top: 18px;
+}
+
+/* GROUND */
+
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 85px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 42px,
+            rgba(0, 0, 0, 0.12) 42px 45px
+        ),
+        #8c4b27;
+
+    border-top: 12px solid #45c83f;
+    box-shadow: 0 -5px 0 #218d36;
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+    .login-container {
+        padding: 25px 17px;
+    }
+
+    .logo h1 {
+        font-size: 23px;
+    }
+
+    .auth-section h2 {
+        font-size: 12px;
+    }
+
+    .main-button,
+    .guest-button {
+        font-size: 9px;
+    }
+}

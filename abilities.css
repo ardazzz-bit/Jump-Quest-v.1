@@ -1,0 +1,326 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #101329;
+    color: white;
+    font-family: 'Press Start 2P', monospace;
+    overflow-x: hidden;
+}
+
+.shop-background {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, #263c75 0%, transparent 35%),
+        radial-gradient(circle at 80% 80%, #49256d 0%, transparent 35%),
+        #101329;
+    z-index: -2;
+}
+
+.background-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: #4d65ff;
+    filter: blur(180px);
+    opacity: 0.12;
+    top: 20%;
+    left: 30%;
+}
+
+.shop-header {
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #ffffff18;
+    background: #080b1caa;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    backdrop-filter: blur(15px);
+}
+
+.back-button {
+    color: #a9b7ff;
+    text-decoration: none;
+    font-size: 10px;
+    transition: 0.2s;
+}
+
+.back-button:hover {
+    color: white;
+    transform: translateX(-4px);
+}
+
+.header-title {
+    text-align: center;
+}
+
+.header-title h1 {
+    font-size: 19px;
+    color: #ffffff;
+    text-shadow: 0 0 15px #687cff;
+}
+
+.header-title p {
+    font-size: 8px;
+    color: #8797d8;
+    margin-top: 12px;
+}
+
+.coin-wallet {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border: 1px solid #f5cb55;
+    border-radius: 10px;
+    background: #f5cb5512;
+    color: #ffda6a;
+    font-size: 10px;
+}
+
+.shop-container {
+    max-width: 1250px;
+    margin: auto;
+    padding: 55px 25px;
+}
+
+.shop-intro {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.shop-intro h2 {
+    font-size: 17px;
+    color: #ffffff;
+}
+
+.shop-intro p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #a4acd0;
+    margin-top: 15px;
+}
+
+.equipped-counter {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 13px 20px;
+    border: 1px solid #697cff66;
+    background: #697cff15;
+    border-radius: 8px;
+    color: #aebaff;
+    font-size: 9px;
+}
+
+.equipped-counter span {
+    color: #ffffff;
+}
+
+.ability-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.ability-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 310px;
+    padding: 22px;
+    background: linear-gradient(145deg, #20294b, #11172e);
+    border: 1px solid #ffffff20;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.ability-card:hover {
+    transform: translateY(-8px);
+    border-color: #8798ff;
+    box-shadow: 0 12px 35px #526dff30;
+}
+
+.ability-card::before {
+    content: "";
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    top: -90px;
+    right: -70px;
+    background: var(--rarity-color, #8798ff);
+    opacity: 0.2;
+    filter: blur(50px);
+}
+
+.ability-card.rarity-common {
+    --rarity-color: #b8c3d5;
+}
+
+.ability-card.rarity-rare {
+    --rarity-color: #36a5ff;
+}
+
+.ability-card.rarity-epic {
+    --rarity-color: #b45cff;
+}
+
+.ability-card.rarity-legendary {
+    --rarity-color: #ffbd45;
+}
+
+.ability-card.rarity-mythical {
+    --rarity-color: #ff4e9b;
+}
+
+.ability-card.rarity-divine {
+    --rarity-color: #fff2a1;
+}
+
+.ability-card.rarity-secret {
+    --rarity-color: #54ffe3;
+}
+
+.ability-rarity {
+    color: var(--rarity-color);
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.ability-icon {
+    width: 90px;
+    height: 90px;
+    margin: 25px auto 20px;
+    display: grid;
+    place-items: center;
+    font-size: 48px;
+    border-radius: 20px;
+    background: #ffffff0d;
+    border: 1px solid var(--rarity-color);
+    box-shadow: 0 0 25px color-mix(in srgb, var(--rarity-color), transparent 65%);
+}
+
+.ability-name {
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    margin-bottom: 13px;
+}
+
+.ability-description {
+    min-height: 38px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #aeb8d9;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.ability-price {
+    text-align: center;
+    margin: 18px 0;
+    color: #ffda6a;
+    font-size: 10px;
+}
+
+.ability-action {
+    width: 100%;
+    padding: 13px 8px;
+    border: none;
+    border-radius: 7px;
+    background: linear-gradient(135deg, #526eff, #8257ff);
+    color: white;
+    font-family: inherit;
+    font-size: 9px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.ability-action:hover {
+    filter: brightness(1.2);
+    transform: scale(1.03);
+}
+
+.ability-action.owned {
+    background: #263b4a;
+    border: 1px solid #48d6a0;
+    color: #70f0bd;
+}
+
+.ability-action.equipped {
+    background: #194b3d;
+    border: 1px solid #55edb0;
+    color: #8affcb;
+}
+
+.ability-action:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: #aebaff;
+    padding: 50px 0;
+    font-size: 10px;
+}
+
+.shop-footer {
+    text-align: center;
+    margin-top: 65px;
+    color: #59658e;
+    font-size: 8px;
+}
+
+@media (max-width: 600px) {
+    .shop-header {
+        padding: 18px 12px;
+        gap: 8px;
+    }
+
+    .header-title h1 {
+        font-size: 12px;
+    }
+
+    .header-title p {
+        font-size: 6px;
+    }
+
+    .back-button,
+    .coin-wallet {
+        font-size: 7px;
+    }
+
+    .coin-wallet {
+        padding: 10px;
+    }
+
+    .shop-container {
+        padding: 35px 15px;
+    }
+
+    .shop-intro h2 {
+        font-size: 12px;
+    }
+
+    .ability-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 13px;
+    }
+
+    .ability-card {
+        padding: 15px;
+    }
+}

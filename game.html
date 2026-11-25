@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUMP QUEST - Playing</title>
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+    <header class="game-header">
+        <button onclick="goToLevels()">← LEVELS</button>
+        <h1>JUMP QUEST</h1>
+        <div class="game-stats">
+            <span>COINS: <span id="coinCount">0</span></span>
+        </div>
+    </header>
+
+    <main class="game-container">
+        <canvas id="gameCanvas" width="900" height="500"></canvas>
+    </main>
+
+    <div class="game-controls">
+        <p>← → MOVE</p>
+        <p>SPACE / ↑ JUMP</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/cloud-save.js"></script>
+    <script src="js/game.js"></script>
+</body>
+</html>

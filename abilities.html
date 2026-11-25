@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUMP QUEST - ABILITY SHOP</title>
+    <link rel="stylesheet" href="css/abilities.css">
+</head>
+<body>
+
+    <div class="shop-background">
+        <div class="background-glow"></div>
+    </div>
+
+    <header class="shop-header">
+        <a href="index.html" class="back-button">← BACK</a>
+
+        <div class="header-title">
+            <h1>ABILITY SHOP</h1>
+            <p>UPGRADE YOUR GAME</p>
+        </div>
+
+        <div class="coin-wallet">
+            <span>🪙</span>
+            <span id="coinBalance">0</span>
+        </div>
+    </header>
+
+    <main class="shop-container">
+
+        <section class="shop-intro">
+            <h2>CHOOSE YOUR POWER</h2>
+            <p>Unlock powerful abilities and customize your gameplay.</p>
+            <div class="equipped-counter">
+                EQUIPPED: <span id="equippedCount">0</span> / 2
+            </div>
+        </section>
+
+        <section class="ability-grid" id="abilityGrid">
+            <p class="loading-message">LOADING ABILITIES...</p>
+        </section>
+
+        <p class="shop-footer">
+            JUMP QUEST • ABILITY COLLECTION
+        </p>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="js/cloud-save.js"></script>
+    <script src="js/abilities.js"></script>
+
+</body>
+</html>
